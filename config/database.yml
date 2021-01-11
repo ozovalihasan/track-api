@@ -22,4 +22,6 @@ test:
 
 production:
   <<: *default
-  database: db/production.sqlite3
+  database: bookstore_api_production
+  username: bookstore_api
+  password: <%= ENV['TRACK_API_DATABASE_PASSWORD'] %>

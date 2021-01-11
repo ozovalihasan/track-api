@@ -1,24 +1,25 @@
 class PiecesController < ApplicationController
   before_action :set_piece, only: %i[show update destroy]
   before_action :authorized
+  before_action :check_own, only: %i[show update destroy]
+  before_action :set_tracked_item, only: ['create']
 
   # GET /pieces
   def index
-    p @user
-    @pieces = Piece.where(user_id: @user.id)
+    @pieces = Piece.joins(:tracked_item).where(tracked_item: { user_id: @user.id }).order(created_at: :desc)
 
     render json: @pieces
   end
 
   # GET /pieces/1
   def show
-    render json: @piece
+    @taken_times = @piece.taken_times
+    render json: { piece: @piece, taken_times: @taken_times}
   end
 
   # POST /pieces
   def create
-    @piece = Piece.new(piece_params)
-    @piece.user_id = @user.id
+    @piece = @tracked_item.pieces.new(piece_params)
 
     if @piece.save
       render json: @piece, status: :created, location: @piece
@@ -48,8 +49,21 @@ class PiecesController < ApplicationController
     @piece = Piece.find(params[:id])
   end
 
+  def set_tracked_item
+    @tracked_item = TrackedItem.find(params[:tracked_item_id])
+    unless @tracked_item.user.id == @user.id
+      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
+    end
+  end
+
+  def check_own
+    unless Piece.find(params[:id]).tracked_item.user.id == @user.id
+      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
+    end
+  end
+
   # Only allow a trusted parameter "white list" through.
   def piece_params
-    params.require(:piece).permit(:message, :user_id)
+    params.require(:piece).permit(:name, :frequency_time, :frequency, :percentage)
   end
 end

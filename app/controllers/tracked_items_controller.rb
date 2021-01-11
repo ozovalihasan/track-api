@@ -11,13 +11,13 @@ class TrackedItemsController < ApplicationController
 
   # GET /tracked_items/1
   def show
-    render json: @tracked_item
+    @pieces = @tracked_item.pieces
+    render json: {tracked_item: @tracked_item, pieces: @pieces}
   end
 
   # POST /tracked_items
   def create
-    @tracked_item = TrackedItem.new(tracked_item_params)
-    @tracked_item.user_id = @user.id
+    @tracked_item = @user.tracked_items.new(tracked_item_params)
 
     if @tracked_item.save
       render json: @tracked_item, status: :created, location: @tracked_item
@@ -49,6 +49,6 @@ class TrackedItemsController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def tracked_item_params
-    params.require(:tracked_item).permit(:message, :user_id)
+    params.require(:tracked_item).permit(:name)
   end
 end

@@ -66,6 +66,7 @@ GEM
       msgpack (~> 1.0)
     builder (3.2.4)
     byebug (11.1.3)
+    coderay (1.1.3)
     concurrent-ruby (1.1.7)
     crass (1.0.6)
     database_cleaner (1.8.5)
@@ -108,6 +109,9 @@ GEM
     parallel (1.20.1)
     parser (3.0.0.0)
       ast (~> 2.4.1)
+    pry (0.13.1)
+      coderay (~> 1.1)
+      method_source (~> 1.0)
     puma (5.1.1)
       nio4r (~> 2.0)
     rack (2.2.3)
@@ -206,6 +210,7 @@ DEPENDENCIES
   hirb
   jwt
   listen (~> 3.3)
+  pry
   puma (~> 5.0)
   rack-cors
   rails (~> 6.1.0)

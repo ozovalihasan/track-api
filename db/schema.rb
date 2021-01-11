@@ -10,16 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_30_074418) do
+ActiveRecord::Schema.define(version: 2021_01_11_090811) do
 
   create_table "pieces", force: :cascade do |t|
     t.string "name"
     t.integer "frequency_time"
     t.integer "frequency"
     t.integer "percentage"
-    t.integer "tracked_item_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.integer "tracked_item_id", null: false
     t.index ["tracked_item_id"], name: "index_pieces_on_tracked_item_id"
   end
 

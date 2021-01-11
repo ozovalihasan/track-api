@@ -6,8 +6,6 @@ class CreatePieces < ActiveRecord::Migration[6.1]
       t.integer :frequency
       t.integer :percentage
 
-      t.references :tracked_item, null: false, foreign_key: true
-
       t.timestamps
     end
   end

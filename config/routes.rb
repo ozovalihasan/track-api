@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   resource :users, only: [:create]
   resources :tracked_items
   resources :pieces
-  resources :taken_times
+  resources :taken_times , only: [:index, :create, :destroy]
   
   post "/login", to: "users#login"
   get "auto_login", to: "users#auto_login"

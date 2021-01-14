@@ -12,7 +12,8 @@ RSpec.describe TakenTime, type: :model do
 
   describe '#as_json' do
     before do
-      taken_times[0].update(created_at: 'Thu, 1 Jan 2000 00:00:00.0 UTC +00:00', updated_at: 'Thu, 1 Jan 2000 00:00:00.0 UTC +00:00')
+      taken_times[0].update(created_at: 'Thu, 1 Jan 2000 00:00:00.0 UTC +00:00',
+                            updated_at: 'Thu, 1 Jan 2000 00:00:00.0 UTC +00:00')
       pieces[0].update(name: 'Mock Piece Name')
     end
     it 'should return updated information of taken time' do

@@ -8,7 +8,7 @@ class TakenTimesController < ApplicationController
   def index
     # @taken_times = TakenTime.joins(piece: {tracked_item: :user}).where(tracked_items: { user_id: @user.id }).includes(:piece)
     @taken_times = @user.taken_times.includes(:piece).order(created_at: :desc)
-    
+
     render json: @taken_times
   end
 
@@ -37,6 +37,7 @@ class TakenTimesController < ApplicationController
 
   def set_piece
     @piece = Piece.find(params[:piece_id])
+
     unless @piece.tracked_item.user.id == @user.id
       render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
     end
@@ -50,6 +51,6 @@ class TakenTimesController < ApplicationController
 
   # Only allow a trusted parameter "white list" through.
   def taken_time_params
-    params.require(:taken_time).permit()
+    params.require(:taken_time).permit
   end
 end

@@ -12,7 +12,7 @@ class TrackedItemsController < ApplicationController
   # GET /tracked_items/1
   def show
     @pieces = @tracked_item.pieces
-    render json: {tracked_item: @tracked_item, pieces: @pieces}
+    render json: { tracked_item: @tracked_item, pieces: @pieces }
   end
 
   # POST /tracked_items

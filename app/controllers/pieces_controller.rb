@@ -14,7 +14,7 @@ class PiecesController < ApplicationController
   # GET /pieces/1
   def show
     @taken_times = @piece.taken_times
-    render json: { piece: @piece, taken_times: @taken_times}
+    render json: { piece: @piece, taken_times: @taken_times }
   end
 
   # POST /pieces

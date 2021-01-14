@@ -54,7 +54,7 @@ RSpec.describe 'Piece', type: :request do
     it 'returns tracked items' do
       res = JSON.parse(response.body)
       expect(res).not_to be_empty
-      expect(res['id']).to eq(1)
+      expect(res['piece']['id']).to eq(1)
     end
 
     it 'returns status code 200' do

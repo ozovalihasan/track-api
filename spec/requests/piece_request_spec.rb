@@ -20,14 +20,14 @@ RSpec.describe 'Piece', type: :request do
       password: password
     }
 
-    token = JSON.parse(response.body)['token']
+    JSON.parse(response.body)['token']
   end
 
   describe 'GET /pieces' do
     before do
       get '/pieces', headers: {
         'Content-Type': 'application/json',
-        Authorization: 'bearer ' + token
+        Authorization: "bearer #{token}"
       }
     end
 

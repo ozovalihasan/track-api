@@ -51,15 +51,15 @@ class PiecesController < ApplicationController
 
   def set_tracked_item
     @tracked_item = TrackedItem.find(params[:tracked_item_id])
-    unless @tracked_item.user.id == @user.id
-      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
-    end
+    return if @tracked_item.user.id == @user.id
+
+    render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
   end
 
   def check_own
-    unless Piece.find(params[:id]).tracked_item.user.id == @user.id
-      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
-    end
+    return if Piece.find(params[:id]).tracked_item.user.id == @user.id
+
+    render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
   end
 
   # Only allow a trusted parameter "white list" through.

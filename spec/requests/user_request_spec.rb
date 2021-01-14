@@ -9,7 +9,7 @@ RSpec.describe 'Users', type: :request do
       password: password
     }
 
-    token = JSON.parse(response.body)['token']
+    JSON.parse(response.body)['token']
   end
 
   describe 'POST /users' do

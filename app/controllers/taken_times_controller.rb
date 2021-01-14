@@ -37,14 +37,14 @@ class TakenTimesController < ApplicationController
   def set_piece
     @piece = Piece.find(params[:piece_id])
 
-    unless @piece.tracked_item.user.id == @user.id
-      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
-    end
+    return if @piece.tracked_item.user.id == @user.id
+
+    render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
   end
 
   def check_own
-    unless TakenTime.find(params[:id]).piece.tracked_item.user.id == @user.id
-      render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
-    end
+    return if TakenTime.find(params[:id]).piece.tracked_item.user.id == @user.id
+
+    render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
   end
 end

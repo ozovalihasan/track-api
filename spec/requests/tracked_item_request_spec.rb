@@ -10,7 +10,7 @@ RSpec.describe 'TrackedItems', type: :request do
       password: password
     }
 
-    token = JSON.parse(response.body)['token']
+    JSON.parse(response.body)['token']
   end
 
   describe 'GET /tracked_items' do

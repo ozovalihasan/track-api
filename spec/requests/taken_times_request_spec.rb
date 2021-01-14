@@ -17,7 +17,7 @@ RSpec.describe 'TakenTimes', type: :request do
       password: password
     }
 
-    token = JSON.parse(response.body)['token']
+    JSON.parse(response.body)['token']
   end
 
   describe 'POST /taken_times' do
@@ -64,12 +64,11 @@ RSpec.describe 'TakenTimes', type: :request do
     before do
       delete '/taken_times/1', headers: {
         'Content-Type': 'application/json',
-        Authorization: "bearer #{token}"
+        Authorization: 'bearer '.concat(token)
       }
     end
 
     it 'deletes the taken time' do
-      require 'pry'; binding.pry
       expect(TakenTime.all.size).to eq(5)
     end
     it 'returns status code 204' do

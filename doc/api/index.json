@@ -1,0 +1,17 @@
+{
+  "resources": [
+    {
+      "name": "Users",
+      "explanation": "Users resource",
+      "examples": [
+        {
+          "description": "Signing up a user with password",
+          "link": "users/signing_up_a_user_with_password.json",
+          "groups": "all",
+          "route": "/users",
+          "method": "post"
+        }
+      ]
+    }
+  ]
+}

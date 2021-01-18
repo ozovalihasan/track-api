@@ -74,7 +74,7 @@ RSpec.describe 'Piece', type: :request do
     it 'returns created piece' do
       res = JSON.parse(response.body)
       expect(res).not_to be_empty
-      expect(res['username']).to eq(name)
+      expect(res['name']).to eq(piece[:name])
     end
 
     it 'returns status code 201' do

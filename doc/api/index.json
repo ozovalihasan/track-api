@@ -1,40 +1,108 @@
 {
   "resources": [
     {
-      "name": "Tracked Items",
-      "explanation": "Tracked Item resource",
+      "name": "Pieces",
+      "explanation": "Pieces resource",
+      "examples": [
+        {
+          "description": "A piece is created",
+          "link": "pieces/a_piece_is_created.json",
+          "groups": "all",
+          "route": "/pieces",
+          "method": "post"
+        },
+        {
+          "description": "Pieces are Listed ",
+          "link": "pieces/pieces_are_listed_.json",
+          "groups": "all",
+          "route": "/pieces",
+          "method": "get"
+        },
+        {
+          "description": "The piece is destroyed",
+          "link": "pieces/the_piece_is_destroyed.json",
+          "groups": "all",
+          "route": "/pieces/1",
+          "method": "delete"
+        },
+        {
+          "description": "The piece is shown",
+          "link": "pieces/the_piece_is_shown.json",
+          "groups": "all",
+          "route": "/pieces/1",
+          "method": "get"
+        },
+        {
+          "description": "The piece is updated",
+          "link": "pieces/the_piece_is_updated.json",
+          "groups": "all",
+          "route": "/pieces/1",
+          "method": "put"
+        }
+      ]
+    },
+    {
+      "name": "TakenTimes",
+      "explanation": "TakenTimes resource",
+      "examples": [
+        {
+          "description": "A taken time is created",
+          "link": "takentimes/a_taken_time_is_created.json",
+          "groups": "all",
+          "route": "/taken_times",
+          "method": "post"
+        },
+        {
+          "description": "Taken times are Listed ",
+          "link": "takentimes/taken_times_are_listed_.json",
+          "groups": "all",
+          "route": "/taken_times",
+          "method": "get"
+        },
+        {
+          "description": "The taken time is destroyed",
+          "link": "takentimes/the_taken_time_is_destroyed.json",
+          "groups": "all",
+          "route": "/taken_times/1",
+          "method": "delete"
+        }
+      ]
+    },
+    {
+      "name": "TrackedItems",
+      "explanation": "TrackedItems resource",
       "examples": [
         {
           "description": "A tracked item is created",
-          "link": "tracked_items/a_tracked_item_is_created.json",
+          "link": "trackeditems/a_tracked_item_is_created.json",
           "groups": "all",
           "route": "/tracked_items",
           "method": "post"
         },
         {
           "description": "The tracked item is destroyed",
-          "link": "tracked_items/the_tracked_item_is_destroyed.json",
+          "link": "trackeditems/the_tracked_item_is_destroyed.json",
           "groups": "all",
           "route": "/tracked_items/1",
           "method": "delete"
         },
         {
           "description": "The tracked item is shown",
-          "link": "tracked_items/the_tracked_item_is_shown.json",
+          "link": "trackeditems/the_tracked_item_is_shown.json",
           "groups": "all",
           "route": "/tracked_items/1",
           "method": "get"
         },
         {
           "description": "The tracked item is updated",
-          "link": "tracked_items/the_tracked_item_is_updated.json",
+          "link": "trackeditems/the_tracked_item_is_updated.json",
           "groups": "all",
           "route": "/tracked_items/1",
           "method": "put"
         },
         {
           "description": "Tracked items are Listed ",
-          "link": "tracked_items/tracked_items_are_listed_.json",
+          "link": "trackeditems/tracked_items_are_listed_.json",
           "groups": "all",
           "route": "/tracked_items",
           "method": "get"

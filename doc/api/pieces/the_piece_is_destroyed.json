@@ -1,9 +1,9 @@
 {
-  "resource": "Tracked Items",
-  "resource_explanation": "Tracked Item resource",
+  "resource": "Pieces",
+  "resource_explanation": "Pieces resource",
   "http_method": "DELETE",
-  "route": "/tracked_items/1",
-  "description": "The tracked item is destroyed",
+  "route": "/pieces/1",
+  "description": "The piece is destroyed",
   "explanation": null,
   "parameters": [
     {
@@ -19,10 +19,10 @@
   "requests": [
     {
       "request_method": "DELETE",
-      "request_path": "/tracked_items/1",
-      "request_body": "{}",
+      "request_path": "/pieces/1",
+      "request_body": null,
       "request_headers": {
-        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.JE-3atrDbZYxUQmXiItrSGHo50cLZYRXn04xOlNxbWs",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo",
         "Content-Type": "application/json"
       },
       "request_query_parameters": {

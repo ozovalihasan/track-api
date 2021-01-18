@@ -35,7 +35,7 @@
       "request_content_type": "application/json",
       "response_status": 200,
       "response_status_text": "OK",
-      "response_body": "{\n  \"user\": {\n    \"id\": 1,\n    \"username\": \"Mock Name\",\n    \"password_digest\": \"$2a$04$Ja00sCDp.cKOZNn7eVRPiuD7Ov16hmzwGoRJ7VAtaBvg/94iPx4OK\",\n    \"created_at\": \"2021-01-18T21:07:27.451Z\",\n    \"updated_at\": \"2021-01-18T21:07:27.451Z\"\n  },\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo\"\n}",
+      "response_body": "{\n  \"user\": {\n    \"id\": 1,\n    \"username\": \"Mock Name\",\n    \"password_digest\": \"$2a$04$Ufxuk1DHG6cv.EOvwIJe3.kplWVQiPUWVp8IwfoGiwM55OZiytS/C\",\n    \"created_at\": \"2021-01-18T22:41:26.168Z\",\n    \"updated_at\": \"2021-01-18T22:41:26.168Z\"\n  },\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo\"\n}",
       "response_headers": {
         "Content-Type": "application/json; charset=utf-8"
       },

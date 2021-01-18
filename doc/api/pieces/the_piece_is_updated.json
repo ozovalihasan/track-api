@@ -1,0 +1,70 @@
+{
+  "resource": "Pieces",
+  "resource_explanation": "Pieces resource",
+  "http_method": "PUT",
+  "route": "/pieces/1",
+  "description": "The piece is updated",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    },
+    {
+      "with_example": true,
+      "name": "tracked_item_id",
+      "description": "Tracked Item Id"
+    },
+    {
+      "scope": "tracked_item",
+      "with_example": true,
+      "name": "name",
+      "description": "Mock Piece Name"
+    },
+    {
+      "scope": "tracked_item",
+      "with_example": true,
+      "name": "frequency_time",
+      "description": "86400 For Day, 604800 For Week"
+    },
+    {
+      "scope": "tracked_item",
+      "with_example": true,
+      "name": "frequency",
+      "description": "Planned repetition "
+    },
+    {
+      "scope": "tracked_item",
+      "with_example": true,
+      "name": "percentage",
+      "description": "Percentage of completed part"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "PUT",
+      "request_path": "/pieces/1",
+      "request_body": "{\"tracked_item\":{\"name\":null},\"piece\":{\"name\":\"water\"}}",
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"name\": \"water\",\n  \"frequency_time\": 8515156372,\n  \"frequency\": 1,\n  \"id\": 1,\n  \"percentage\": 72,\n  \"created_at\": \"2021-01-18T22:41:25.709Z\",\n  \"updated_at\": \"2021-01-18T22:41:25.731Z\",\n  \"tracked_item_id\": 2\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

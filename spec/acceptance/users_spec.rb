@@ -57,8 +57,6 @@ resource 'Users' do
   header 'Authorization', :bearer
 
   get '/auto_login' do
-    let(:raw_post) { params.to_json }
-
     parameter :token, 'Token', required: true, with_example: true
 
     let(:bearer) do

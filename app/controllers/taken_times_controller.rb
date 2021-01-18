@@ -4,14 +4,12 @@ class TakenTimesController < ApplicationController
   before_action :check_own, only: %i[destroy]
   before_action :set_piece, only: %i[create]
 
-  # GET /taken_times
   def index
     @taken_times = @user.taken_times.includes(:piece).order(created_at: :desc)
 
     render json: @taken_times
   end
 
-  # POST /taken_times
   def create
     @taken_time = @piece.taken_times.new
 
@@ -22,14 +20,12 @@ class TakenTimesController < ApplicationController
     end
   end
 
-  # DELETE /taken_times/1
   def destroy
     @taken_time.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_taken_time
     @taken_time = TakenTime.find(params[:id])
   end

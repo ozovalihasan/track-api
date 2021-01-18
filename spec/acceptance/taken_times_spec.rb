@@ -1,6 +1,6 @@
 # spec/acceptance/orders_spec.rb
 require 'acceptance_helper'
-
+# rubocop:disable Metrics/BlockLength
 resource 'TakenTimes' do
   explanation 'TakenTimes resource'
 
@@ -67,3 +67,4 @@ resource 'TakenTimes' do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

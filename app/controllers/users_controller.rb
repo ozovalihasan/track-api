@@ -1,7 +1,6 @@
 class UsersController < ApplicationController
   before_action :authorized, only: [:auto_login]
 
-  # REGISTER
   def create
     @user = User.create(user_params)
     if @user.valid?
@@ -12,7 +11,6 @@ class UsersController < ApplicationController
     end
   end
 
-  # LOGGING IN
   def login
     @user = User.find_by(username: params[:username])
 

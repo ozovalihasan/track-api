@@ -4,20 +4,17 @@ class PiecesController < ApplicationController
   before_action :check_own, only: %i[show update destroy]
   before_action :set_tracked_item, only: ['create']
 
-  # GET /pieces
   def index
     @pieces = Piece.joins(:tracked_item).where(tracked_item: { user_id: @user.id }).order(created_at: :desc)
 
     render json: @pieces
   end
 
-  # GET /pieces/1
   def show
     @taken_times = @piece.taken_times
     render json: { piece: @piece, taken_times: @taken_times }
   end
 
-  # POST /pieces
   def create
     @piece = @tracked_item.pieces.new(piece_params)
 
@@ -28,7 +25,6 @@ class PiecesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /pieces/1
   def update
     if @piece.update(piece_params)
       render json: @piece
@@ -37,14 +33,12 @@ class PiecesController < ApplicationController
     end
   end
 
-  # DELETE /pieces/1
   def destroy
     @piece.destroy
   end
 
   private
 
-  # Use callbacks to share common setup or constraints between actions.
   def set_piece
     @piece = Piece.find(params[:id])
   end
@@ -62,7 +56,6 @@ class PiecesController < ApplicationController
     render json: { message: 'You are not authorized to receive this record' }, status: :unauthorized
   end
 
-  # Only allow a trusted parameter "white list" through.
   def piece_params
     params.require(:piece).permit(:name, :frequency_time, :frequency, :percentage)
   end

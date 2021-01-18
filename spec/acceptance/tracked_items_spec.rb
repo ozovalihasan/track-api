@@ -1,6 +1,6 @@
 # spec/acceptance/orders_spec.rb
 require 'acceptance_helper'
-
+# rubocop:disable Metrics/BlockLength
 resource 'TrackedItems' do
   explanation 'TrackedItems resource'
 
@@ -115,3 +115,4 @@ resource 'TrackedItems' do
     end
   end
 end
+# rubocop:enable Metrics/BlockLength

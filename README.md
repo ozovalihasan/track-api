@@ -31,7 +31,7 @@ Make sure Node.js is running on your local machine.
 - Open terminal
 - Change directory by using `cd track-api`
 - Run `bundle install`
-
+- [Setup Postgresql](https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/#step-setting-up-the-postgresql-database-for-rails-development). If you have any problem, please check [this answer](https://serverfault.com/a/248162)
 
 ### Usage
 
@@ -44,6 +44,7 @@ Make sure Node.js is running on your local machine.
 - Open terminal
 - Change directory by using `cd track-api`
 - Run `bundle install`
+- [Setup Postgresql](https://www.howtoforge.com/tutorial/ruby-on-rails-ror-with-postgresql-on-ubuntu-16-04/#step-setting-up-the-postgresql-database-for-rails-development). If you have any problem, please check [this answer](https://serverfault.com/a/248162)
 - Run `bundle exec rspec` to test requests
 - Run `bundle exec rake docs:generate` to run  acceptance tests and create API docs
 

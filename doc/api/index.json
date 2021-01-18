@@ -1,12 +1,67 @@
 {
   "resources": [
     {
+      "name": "Tracked Items",
+      "explanation": "Tracked Item resource",
+      "examples": [
+        {
+          "description": "A tracked item is created",
+          "link": "tracked_items/a_tracked_item_is_created.json",
+          "groups": "all",
+          "route": "/tracked_items",
+          "method": "post"
+        },
+        {
+          "description": "The tracked item is destroyed",
+          "link": "tracked_items/the_tracked_item_is_destroyed.json",
+          "groups": "all",
+          "route": "/tracked_items/1",
+          "method": "delete"
+        },
+        {
+          "description": "The tracked item is shown",
+          "link": "tracked_items/the_tracked_item_is_shown.json",
+          "groups": "all",
+          "route": "/tracked_items/1",
+          "method": "get"
+        },
+        {
+          "description": "The tracked item is updated",
+          "link": "tracked_items/the_tracked_item_is_updated.json",
+          "groups": "all",
+          "route": "/tracked_items/1",
+          "method": "put"
+        },
+        {
+          "description": "Tracked items are Listed ",
+          "link": "tracked_items/tracked_items_are_listed_.json",
+          "groups": "all",
+          "route": "/tracked_items",
+          "method": "get"
+        }
+      ]
+    },
+    {
       "name": "Users",
       "explanation": "Users resource",
       "examples": [
         {
-          "description": "Signing up a user with password",
-          "link": "users/signing_up_a_user_with_password.json",
+          "description": "A user log in ",
+          "link": "users/a_user_log_in_.json",
+          "groups": "all",
+          "route": "/login",
+          "method": "post"
+        },
+        {
+          "description": "A user logs in automatically by using token",
+          "link": "users/a_user_logs_in_automatically_by_using_token.json",
+          "groups": "all",
+          "route": "/auto_login",
+          "method": "get"
+        },
+        {
+          "description": "A user signs up",
+          "link": "users/a_user_signs_up.json",
           "groups": "all",
           "route": "/users",
           "method": "post"

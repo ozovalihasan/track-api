@@ -21,7 +21,7 @@ RSpec.describe 'Users', type: :request do
       }
     end
 
-    it 'returns tracked items' do
+    it 'returns information of user ' do
       res = JSON.parse(response.body)
       expect(res['user']).not_to be_empty
       expect(res['token']).not_to be_empty
@@ -40,7 +40,7 @@ RSpec.describe 'Users', type: :request do
       }
     end
 
-    it 'returns tracked items' do
+    it 'returns information of user logged in' do
       res = JSON.parse(response.body)
       expect(res['user']).not_to be_empty
       expect(res['token']).not_to be_empty

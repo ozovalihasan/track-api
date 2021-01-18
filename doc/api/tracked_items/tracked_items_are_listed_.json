@@ -1,0 +1,42 @@
+{
+  "resource": "Tracked Items",
+  "resource_explanation": "Tracked Item resource",
+  "http_method": "GET",
+  "route": "/tracked_items",
+  "description": "Tracked items are Listed ",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/tracked_items",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.JE-3atrDbZYxUQmXiItrSGHo50cLZYRXn04xOlNxbWs",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+        "{}": null
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"name\": \"deleniti\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T21:07:27.257Z\",\n    \"updated_at\": \"2021-01-18T21:07:27.257Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"pariatur\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T21:07:27.260Z\",\n    \"updated_at\": \"2021-01-18T21:07:27.260Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"commodi\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T21:07:27.262Z\",\n    \"updated_at\": \"2021-01-18T21:07:27.262Z\"\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

@@ -7,66 +7,74 @@ resource 'Users' do
   header 'Content-Type', 'application/json'
 
   post '/users' do
-    with_options scope: :data, with_example: true do
-      parameter :username, 'Username', required: true
-      parameter :password, 'Password', required: true
-    end
+    let(:raw_post) { params.to_json }
+
+    parameter :username, 'Username', required: true, with_example: true
+    parameter :password, 'Password', required: true, with_example: true
 
     context '200' do
-      example_request 'Signing up a user with password' do
+      example 'A user signs up' do
+        request = {
+          username: 'Mock Name',
+          password: 'Mock Password'
+        }
+        do_request(request)
+
+        res = JSON.parse(response_body)
+        expect(res['user']).not_to be_empty
+        expect(res['user']['username']).to eq('Mock Name')
+        expect(res['token']).not_to be_empty
         expect(status).to eq(200)
       end
     end
   end
 
-  # put '/orders/:id' do
-  #   with_options scope: :data, with_example: true do
-  #     parameter :name, 'The order name', required: true
-  #     parameter :amount
-  #     parameter :description, 'The order description'
-  #   end
+  let(:user_create) { User.create(username: 'Mock Name', password: 'Mock Password') }
 
-  #   context '200' do
-  #     let(:id) { 1 }
+  post '/login' do
+    let(:raw_post) { params.to_json }
+    parameter :username, 'Username', required: true, with_example: true
+    parameter :password, 'Password', required: true, with_example: true
 
-  #     example 'Update an order' do
-  #       request = {
-  #         data: {
-  #           name: 'order',
-  #           amount: 1,
-  #           description: 'fast order'
-  #         }
-  #       }
+    context '200' do
+      example 'A user log in ' do
+        user_create
+        request = {
+          username: 'Mock Name',
+          password: 'Mock Password'
+        }
+        do_request(request)
+        res = JSON.parse(response_body)
 
-  #       # It's also possible to extract types of parameters when you pass data through `do_request` method.
-  #       do_request(request)
+        expect(res['user']).not_to be_empty
+        expect(res['user']['username']).to eq('Mock Name')
+        expect(res['token']).not_to be_empty
+        expect(status).to eq(200)
+      end
+    end
+  end
 
-  #       expected_response = {
-  #         data: {
-  #           name: 'order',
-  #           amount: 1,
-  #           description: 'fast order'
-  #         }
-  #       }
-  #       expect(status).to eq(200)
-  #       expect(response_body).to eq(expected_response)
-  #     end
-  #   end
+  header 'Authorization', :bearer
 
-  #   context '400' do
-  #     let(:id) { 'a' }
+  get '/auto_login' do
+    let(:raw_post) { params.to_json }
 
-  #     example_request 'Invalid request' do
-  #       expect(status).to eq(400)
-  #     end
-  #   end
+    parameter :token, 'Token', required: true, with_example: true
 
-  #   context '404' do
-  #     let(:id) { 0 }
+    let(:bearer) do
+      user = user_create
+      token = JWT.encode({ user_id: user.id }, Rails.application.secret_key_base)
+      "Bearer #{token}"
+    end
+    context '200' do
+      example 'A user logs in automatically by using token' do
+        bearer
+        do_request
+        res = JSON.parse(response_body)
 
-  #     example_request 'Order is not found' do
-  #       expect(status).to eq(404)
-  #     end
-  #   end
-  # end
+        expect(res['username']).to eq('Mock Name')
+        expect(status).to eq(200)
+      end
+    end
+  end
 end

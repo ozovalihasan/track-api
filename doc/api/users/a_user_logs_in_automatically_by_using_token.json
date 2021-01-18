@@ -1,0 +1,42 @@
+{
+  "resource": "Users",
+  "resource_explanation": "Users resource",
+  "http_method": "GET",
+  "route": "/auto_login",
+  "description": "A user logs in automatically by using token",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/auto_login",
+      "request_body": null,
+      "request_headers": {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo"
+      },
+      "request_query_parameters": {
+        "{}": null
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"id\": 1,\n  \"username\": \"Mock Name\",\n  \"password_digest\": \"$2a$04$R1hSXGG35Htbg0qAkgjkpe5FHlRW7tdNJ2cZ897vji8UtDGqxM5De\",\n  \"created_at\": \"2021-01-18T21:07:27.481Z\",\n  \"updated_at\": \"2021-01-18T21:07:27.481Z\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

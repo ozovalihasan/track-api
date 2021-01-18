@@ -1,18 +1,9 @@
-# require 'rails_helper'
-# require 'rspec_api_documentation'
-# require 'rspec_api_documentation/dsl'
-# RspecApiDocumentation.configure do |config|
-#   # Output folder
-#   config.docs_dir = Rails.root.join('doc', 'api')
-#   # An array of output format(s).
-#   # Possible values are :json, :html, :combined_text, :combined_json,
-#   #   :json_iodocs, :textile, :markdown, :append_json
-#   config.format = [:html]
-# end
 require 'rails_helper'
 require 'rspec_api_documentation'
 require 'rspec_api_documentation/dsl'
 
 RspecApiDocumentation.configure do |config|
-  config.format = :json
+  config.format = [:json]
+  config.request_headers_to_include = %w[Content-Type Authorization]
+  config.response_headers_to_include = ['Content-Type']
 end

@@ -62,5 +62,5 @@ Apitome.configure do |config|
   config.precompile_assets = true
 
   # If you do not want "Simulated Response" links to appear you can disable them.
-  config.simulated_response = false
+  config.simulated_response = true
 end

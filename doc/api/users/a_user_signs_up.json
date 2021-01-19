@@ -1,0 +1,46 @@
+{
+  "resource": "Users",
+  "resource_explanation": "Users resource",
+  "http_method": "POST",
+  "route": "/users",
+  "description": "A user signs up",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "username",
+      "description": "Username"
+    },
+    {
+      "required": true,
+      "with_example": true,
+      "name": "password",
+      "description": "Password"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/users",
+      "request_body": "{\"username\":\"Mock Name\",\"password\":\"Mock Password\"}",
+      "request_headers": {
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "{\n  \"user\": {\n    \"id\": 1,\n    \"username\": \"Mock Name\",\n    \"password_digest\": \"$2a$04$Ufxuk1DHG6cv.EOvwIJe3.kplWVQiPUWVp8IwfoGiwM55OZiytS/C\",\n    \"created_at\": \"2021-01-18T22:41:26.168Z\",\n    \"updated_at\": \"2021-01-18T22:41:26.168Z\"\n  },\n  \"token\": \"eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo\"\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

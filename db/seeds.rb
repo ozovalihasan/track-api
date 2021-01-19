@@ -5,3 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+require 'factory_bot_rails'
+require 'faker'
+
+# user = User.create(username: "reizl", password: "sample")
+tracked_items_with_user(User.last)
+pieces_with_tracked_items([TrackedItem.last])

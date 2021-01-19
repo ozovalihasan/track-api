@@ -1,0 +1,40 @@
+{
+  "resource": "TrackedItems",
+  "resource_explanation": "TrackedItems resource",
+  "http_method": "DELETE",
+  "route": "/tracked_items/1",
+  "description": "The tracked item is destroyed",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "DELETE",
+      "request_path": "/tracked_items/1",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.JE-3atrDbZYxUQmXiItrSGHo50cLZYRXn04xOlNxbWs",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 204,
+      "response_status_text": "No Content",
+      "response_body": null,
+      "response_headers": {
+      },
+      "response_content_type": null,
+      "curl": null
+    }
+  ]
+}

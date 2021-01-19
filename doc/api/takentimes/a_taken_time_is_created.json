@@ -1,0 +1,47 @@
+{
+  "resource": "TakenTimes",
+  "resource_explanation": "TakenTimes resource",
+  "http_method": "POST",
+  "route": "/taken_times",
+  "description": "A taken time is created",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    },
+    {
+      "required": true,
+      "with_example": true,
+      "name": "piece_id",
+      "description": "Piece Id"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "POST",
+      "request_path": "/taken_times",
+      "request_body": "{\"piece_id\":1}",
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 201,
+      "response_status_text": "Created",
+      "response_body": "{\n  \"id\": 4,\n  \"created_at\": 1611009685,\n  \"updated_at\": 1611009685,\n  \"piece\": {\n    \"id\": 1,\n    \"name\": \"ipsum\"\n  },\n  \"tracked_item_id\": 2\n}",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

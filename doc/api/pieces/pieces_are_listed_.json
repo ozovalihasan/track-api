@@ -1,0 +1,41 @@
+{
+  "resource": "Pieces",
+  "resource_explanation": "Pieces resource",
+  "http_method": "GET",
+  "route": "/pieces",
+  "description": "Pieces are Listed ",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/pieces",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxfQ.Fsd4leEdajHGSfY3HKJLTSxQ-8OR0oxMNdTKIAFiJZo",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 3,\n    \"name\": \"quia\",\n    \"frequency_time\": 1212510944,\n    \"frequency\": 9,\n    \"percentage\": 25,\n    \"created_at\": \"2021-01-18T22:41:25.508Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.508Z\",\n    \"tracked_item_id\": 3\n  },\n  {\n    \"id\": 2,\n    \"name\": \"dolor\",\n    \"frequency_time\": 2616451601,\n    \"frequency\": 7,\n    \"percentage\": 90,\n    \"created_at\": \"2021-01-18T22:41:25.505Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.505Z\",\n    \"tracked_item_id\": 3\n  },\n  {\n    \"id\": 1,\n    \"name\": \"et\",\n    \"frequency_time\": 5865990250,\n    \"frequency\": 5,\n    \"percentage\": 59,\n    \"created_at\": \"2021-01-18T22:41:25.502Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.502Z\",\n    \"tracked_item_id\": 3\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

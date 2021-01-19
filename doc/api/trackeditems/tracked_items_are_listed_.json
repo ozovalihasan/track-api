@@ -1,0 +1,41 @@
+{
+  "resource": "TrackedItems",
+  "resource_explanation": "TrackedItems resource",
+  "http_method": "GET",
+  "route": "/tracked_items",
+  "description": "Tracked items are Listed ",
+  "explanation": null,
+  "parameters": [
+    {
+      "required": true,
+      "with_example": true,
+      "name": "token",
+      "description": "Token"
+    }
+  ],
+  "response_fields": [
+
+  ],
+  "requests": [
+    {
+      "request_method": "GET",
+      "request_path": "/tracked_items",
+      "request_body": null,
+      "request_headers": {
+        "Authorization": "Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoyfQ.JE-3atrDbZYxUQmXiItrSGHo50cLZYRXn04xOlNxbWs",
+        "Content-Type": "application/json"
+      },
+      "request_query_parameters": {
+      },
+      "request_content_type": "application/json",
+      "response_status": 200,
+      "response_status_text": "OK",
+      "response_body": "[\n  {\n    \"id\": 1,\n    \"name\": \"fugit\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T22:41:25.990Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.990Z\"\n  },\n  {\n    \"id\": 2,\n    \"name\": \"molestiae\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T22:41:25.992Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.992Z\"\n  },\n  {\n    \"id\": 3,\n    \"name\": \"reprehenderit\",\n    \"user_id\": 2,\n    \"created_at\": \"2021-01-18T22:41:25.995Z\",\n    \"updated_at\": \"2021-01-18T22:41:25.995Z\"\n  }\n]",
+      "response_headers": {
+        "Content-Type": "application/json; charset=utf-8"
+      },
+      "response_content_type": "application/json; charset=utf-8",
+      "curl": null
+    }
+  ]
+}

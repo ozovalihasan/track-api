@@ -26,8 +26,6 @@ gem 'sprockets-rails', require: 'sprockets/railtie'
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', '>= 1.4.4', require: false
 
-# Use postgresql as the database for Active Record
-gem 'pg', '>= 0.18', '< 2.0'
 # Use Rack CORS for handling Cross-Origin Resource Sharing (CORS), making cross-origin AJAX possible
 # gem 'rack-cors'
 
@@ -37,6 +35,8 @@ group :development, :test do
   gem 'factory_bot_rails'
   gem 'faker'
   gem 'rspec-rails'
+  # Use sqlite3 as the database for Active Record
+  gem 'sqlite3', '~> 1.4'
 end
 
 group :development do
@@ -45,10 +45,16 @@ group :development do
   gem 'spring'
 end
 
+group :production do
+  # Use postgresql as the database for Active Record
+  gem 'pg', '>= 0.18', '< 2.0'
+end
+
 group :test do
   gem 'database_cleaner'
   gem 'shoulda-matchers'
 end
+
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'hirb'

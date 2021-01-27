@@ -68,6 +68,13 @@ GEM
       minitest (>= 5.1)
       tzinfo (~> 2.0)
       zeitwerk (~> 2.3)
+    appmap (0.39.1)
+      activesupport
+      faraday
+      gli
+      method_source
+      parser
+      rack
     ast (2.4.1)
     bcrypt (3.1.16)
     bootsnap (1.5.1)
@@ -87,7 +94,13 @@ GEM
       railties (>= 5.0.0)
     faker (2.15.1)
       i18n (>= 1.6, < 2)
+    faraday (1.3.0)
+      faraday-net_http (~> 1.0)
+      multipart-post (>= 1.2, < 3)
+      ruby2_keywords
+    faraday-net_http (1.0.1)
     ffi (1.14.2)
+    gli (2.19.2)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hirb (0.7.3)
@@ -113,6 +126,7 @@ GEM
     mini_portile2 (2.5.0)
     minitest (5.14.3)
     msgpack (1.3.3)
+    multipart-post (2.1.1)
     mustache (1.1.1)
     nio4r (2.5.4)
     nokogiri (1.11.1)
@@ -199,6 +213,7 @@ GEM
       ruby-progressbar (~> 1.7)
       unicode-display_width (>= 1.4.0, < 2.0)
     ruby-progressbar (1.11.0)
+    ruby2_keywords (0.0.4)
     shoulda-matchers (4.5.0)
       activesupport (>= 4.2.0)
     spring (2.1.1)
@@ -224,6 +239,7 @@ PLATFORMS
 
 DEPENDENCIES
   apitome!
+  appmap
   bcrypt (~> 3.1.7)
   bootsnap (>= 1.4.4)
   byebug

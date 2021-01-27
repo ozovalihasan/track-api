@@ -24,14 +24,11 @@ RSpec.describe 'Piece', type: :request do
   end
 
   describe 'GET /pieces' do
-    before do
+    it 'returns all pieces of user' do
       get '/pieces', headers: {
         'Content-Type': 'application/json',
         Authorization: "bearer #{token}"
       }
-    end
-
-    it 'returns all pieces of user' do
       res = JSON.parse(response.body)
 
       expect(res).not_to be_empty
@@ -39,51 +36,58 @@ RSpec.describe 'Piece', type: :request do
     end
 
     it 'returns status code 200' do
+      get '/pieces', headers: {
+        'Content-Type': 'application/json',
+        Authorization: "bearer #{token}"
+      }
       expect(response).to have_http_status(200)
     end
   end
 
   describe 'GET /pieces/:id' do
-    before do
+    it 'returns tracked items' do
       get '/pieces/1', headers: {
         'Content-Type': 'application/json',
         Authorization: "bearer #{token}"
       }
-    end
-
-    it 'returns tracked items' do
       res = JSON.parse(response.body)
       expect(res).not_to be_empty
       expect(res['piece']['id']).to eq(1)
     end
 
     it 'returns status code 200' do
+      get '/pieces/1', headers: {
+        'Content-Type': 'application/json',
+        Authorization: "bearer #{token}"
+      }
       expect(response).to have_http_status(200)
     end
   end
 
   describe 'POST /pieces' do
-    before do
+    it 'returns created piece' do
       post '/pieces', params: {
         piece: piece, tracked_item_id: 1
       }, headers: {
         Authorization: "bearer #{token}"
       }
-    end
-
-    it 'returns created piece' do
       res = JSON.parse(response.body)
       expect(res).not_to be_empty
       expect(res['name']).to eq(piece[:name])
     end
 
     it 'returns status code 201' do
+      post '/pieces', params: {
+        piece: piece, tracked_item_id: 1
+      }, headers: {
+        Authorization: "bearer #{token}"
+      }
       expect(response).to have_http_status(201)
     end
   end
 
   describe 'PUT /pieces' do
-    before do
+    it 'updates the piece item' do
       put '/pieces/1',
           params: {
             piece: {
@@ -93,32 +97,39 @@ RSpec.describe 'Piece', type: :request do
           headers: {
             Authorization: "bearer #{token}"
           }
-    end
-
-    it 'updates the piece item' do
       res = JSON.parse(response.body)
       expect(res['name']).to eq('pill')
       expect(res['id']).to eq(1)
     end
 
     it 'returns status code 200' do
+      put '/pieces/1',
+          params: {
+            piece: {
+              name: 'pill'
+            }
+          },
+          headers: {
+            Authorization: "bearer #{token}"
+          }
       expect(response).to have_http_status(200)
     end
   end
 
   describe 'DELETE /trackedItems/:id' do
-    before do
+    it 'deletes the piece' do
       delete '/pieces/1', headers: {
         'Content-Type': 'application/json',
         Authorization: "bearer #{token}"
       }
-    end
-
-    it 'deletes the piece' do
       expect(Piece.all.length).to eq(5)
     end
 
     it 'returns status code 204' do
+      delete '/pieces/1', headers: {
+        'Content-Type': 'application/json',
+        Authorization: "bearer #{token}"
+      }
       expect(response).to have_http_status(204)
     end
   end

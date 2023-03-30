@@ -12,6 +12,9 @@
 
 ActiveRecord::Schema.define(version: 2021_01_11_090811) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "pieces", force: :cascade do |t|
     t.string "name"
     t.integer "frequency_time"
@@ -19,12 +22,12 @@ ActiveRecord::Schema.define(version: 2021_01_11_090811) do
     t.integer "percentage"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.integer "tracked_item_id", null: false
+    t.bigint "tracked_item_id", null: false
     t.index ["tracked_item_id"], name: "index_pieces_on_tracked_item_id"
   end
 
   create_table "taken_times", force: :cascade do |t|
-    t.integer "piece_id", null: false
+    t.bigint "piece_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["piece_id"], name: "index_taken_times_on_piece_id"
@@ -32,7 +35,7 @@ ActiveRecord::Schema.define(version: 2021_01_11_090811) do
 
   create_table "tracked_items", force: :cascade do |t|
     t.string "name"
-    t.integer "user_id", null: false
+    t.bigint "user_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["user_id"], name: "index_tracked_items_on_user_id"

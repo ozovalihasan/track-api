@@ -6,10 +6,10 @@ This API is the backend of [Dr.Ti](https://github.com/ozovalihasan/track).
 
 ## Live Demo
 
-Please connect your app by using [this URL](https://dr-ti-api.herokuapp.com)
+Please connect your app by using [this URL](https://dr-ti-api.fly.dev/)
 
 ## Documentation
-Please check [the detailed documentation.](https://dr-ti-api.herokuapp.com/api/docs)
+Please check [the detailed documentation.](https://dr-ti-api.fly.dev/api/docs)
 
 ## Built With
 
